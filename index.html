@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>لامات كوفي | Lamat Coffee</title>
+<link rel="icon" href="assets/logo.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Reem+Kufi:wght@500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fdf5ee;--bg2:#f8d5be;--card:#fff;--ink:#17306b;--mut:#6c7796;--acc:#e04e24;--acc2:#ff8a54;--sh:0 14px 40px rgba(224,78,36,.16);--hd:rgba(253,245,238,.82);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151110;--bg2:#221915;--card:#261c18;--ink:#f6e9dd;--mut:#b9a79e;--acc:#ff7a4d;--acc2:#e04e24;--sh:0 14px 40px rgba(0,0,0,.4);--hd:rgba(21,17,16,.82)}}
+:root[data-theme="dark"]{--bg:#151110;--bg2:#221915;--card:#261c18;--ink:#f6e9dd;--mut:#b9a79e;--acc:#ff7a4d;--acc2:#e04e24;--sh:0 14px 40px rgba(0,0,0,.4);--hd:rgba(21,17,16,.82)}
+*{box-sizing:border-box;margin:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{background:var(--bg);color:var(--ink);font-family:Tajawal,Tahoma,sans-serif;overflow-x:hidden}
+header.nav{position:fixed;top:env(safe-area-inset-top,0px);inset-inline:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:12px 5vw;background:var(--hd);backdrop-filter:blur(14px);transition:padding .4s,box-shadow .4s,transform .45s cubic-bezier(.2,.9,.2,1)}
+header.nav.hide{transform:translateY(-125%)}
+header.nav.s{padding-block:7px;box-shadow:0 6px 24px rgba(0,0,0,.1)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--acc);font-family:'Reem Kufi',serif;font-size:1.5rem}
+.brand img{width:60px;height:60px;border-radius:50%;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.links{display:flex;align-items:center;gap:6px}
+.links a{color:var(--ink);text-decoration:none;font-weight:700;padding:9px 16px;border-radius:40px;transition:.3s}
+.links a:hover,.links a.on{background:var(--bg2);color:var(--acc)}
+.links a.cta{background:linear-gradient(100deg,var(--acc),var(--acc2));color:#fff;box-shadow:var(--sh)}
+.links a.cta:hover{transform:translateY(-2px)}
+#mb{display:none;width:44px;height:44px;border-radius:50%;border:0;background:var(--bg2);color:var(--acc);font-size:1.4rem;cursor:pointer}
+.hero{position:relative;min-height:100svh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:30px;padding:110px 6vw 90px;overflow:hidden;background:radial-gradient(circle at 80% 30%,var(--bg2),var(--bg) 65%)}
+.hero h1{font-family:'Reem Kufi',serif;font-size:clamp(2.6rem,7vw,5rem);line-height:1.25;color:var(--acc);animation:up 1s .2s both}
+.hero h1 span{color:var(--ink)}
+.hero p{color:var(--mut);font-size:1.2rem;margin:14px 0 28px;line-height:1.9;animation:up 1s .4s both}
+.btns{display:flex;gap:14px;flex-wrap:wrap;animation:up 1s .6s both}
+.btn{padding:15px 32px;border-radius:60px;font:inherit;font-weight:800;text-decoration:none;color:#fff;background:linear-gradient(100deg,var(--acc),var(--acc2));box-shadow:var(--sh);transition:.35s;border:0;cursor:pointer;display:inline-block}
+.btn:hover{transform:translateY(-4px) scale(1.04)}
+.btn.o{background:transparent;color:var(--acc);border:2px solid var(--acc);box-shadow:none}
+.vis{position:relative;display:grid;place-items:center;min-height:340px;animation:up 1.2s .3s both}
+.blob{position:absolute;width:min(380px,80vw);aspect-ratio:1;background:linear-gradient(135deg,var(--acc),var(--acc2));opacity:.9;animation:morph 9s ease-in-out infinite,spin 30s linear infinite}
+.vis img{position:relative;width:min(250px,56vw);border-radius:50%;box-shadow:0 20px 60px rgba(0,0,0,.25);animation:float 6s ease-in-out infinite}
+.fl{position:absolute;font-size:2rem;animation:float 5s ease-in-out infinite}
+.wave{position:absolute;bottom:-1px;inset-inline:0;width:100%;height:70px;display:block}
+section{padding:90px 6vw}
+.t{text-align:center;margin-bottom:36px}.t small{color:var(--acc);font-weight:800;letter-spacing:.25em}
+.t h2{font-family:'Reem Kufi',serif;font-size:clamp(2rem,6vw,3.2rem);margin-top:4px}
+.order{max-width:900px;margin:auto;text-align:center;padding:50px 24px;border-radius:36px;color:#fff;background:linear-gradient(120deg,var(--acc),var(--acc2));box-shadow:var(--sh);position:relative;overflow:hidden}
+.order::before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.14);top:-120px;inset-inline-end:-80px;animation:float 7s ease-in-out infinite}
+.order h3{font-family:'Reem Kufi',serif;font-size:clamp(1.8rem,5vw,2.6rem);position:relative}.order p{margin:10px 0 26px;opacity:.95;position:relative}
+.order .btn{background:#fff;color:var(--acc);margin:4px;position:relative}.order .btn.o{background:transparent;color:#fff;border-color:#fff}
+.frame{max-width:620px;margin:auto;padding:12px;border-radius:30px;background:linear-gradient(135deg,var(--acc),var(--acc2),var(--acc));box-shadow:var(--sh)}
+.in{position:relative;border-radius:20px;overflow:hidden;background:#fdf5ee;cursor:zoom-in;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+.in canvas{display:block;width:100%;height:auto;pointer-events:none}
+.shield{position:absolute;inset:0;z-index:2}
+.hint{text-align:center;color:var(--mut);margin-top:18px}
+#lb{position:fixed;inset:0;z-index:80;background:rgba(10,5,3,.94);overflow:auto;display:none;padding:calc(66px + env(safe-area-inset-top,0px)) 12px 30px;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+#lb.on{display:block}#lb .w{max-width:900px;margin:auto}
+#lb canvas{display:block;width:100%;height:auto;border-radius:12px;pointer-events:none}
+#x{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));inset-inline-start:14px;z-index:90;width:46px;height:46px;border-radius:50%;border:0;font-size:1.3rem;background:var(--acc);color:#fff;cursor:pointer;display:none}
+#lb.on~#x{display:block}
+.alt{background:var(--bg2)}
+.soc{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px;max-width:900px;margin:auto}
+.soc a{display:flex;flex-direction:column;align-items:center;gap:10px;padding:26px 14px;border-radius:26px;background:var(--card);color:var(--ink);text-decoration:none;font-weight:800;box-shadow:var(--sh);transition:.4s}
+.soc a i{width:64px;height:64px;display:block;transition:.4s}.soc a i img{width:100%;height:100%;object-fit:contain;border-radius:22%;display:block}
+.soc a:hover{transform:translateY(-8px)}.soc a:hover i{transform:rotate(8deg) scale(1.12)}
+footer{text-align:center;padding:30px;color:var(--mut)}
+.fab{position:fixed;inset-inline-start:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:45;padding:14px 22px;border-radius:60px;text-decoration:none;font-weight:800;color:#fff;background:linear-gradient(100deg,var(--acc),var(--acc2));animation:pulse 2.4s infinite}
+.rv{opacity:0;transform:translateY(36px);transition:opacity 1s,transform 1s cubic-bezier(.2,.9,.2,1)}.rv.on{opacity:1;transform:none}
+@keyframes up{from{opacity:0;transform:translateY(30px)}}@keyframes float{50%{transform:translateY(-14px)}}
+@keyframes spin{to{rotate:360deg}}
+@keyframes morph{0%,100%{border-radius:60% 40% 30% 70%/60% 30% 70% 40%}50%{border-radius:30% 60% 70% 40%/50% 60% 30% 60%}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(224,78,36,.5)}100%{box-shadow:0 0 0 20px rgba(224,78,36,0)}}
+@media(max-width:800px){
+#mb{display:block}
+.links{position:absolute;top:100%;inset-inline:0;flex-direction:column;padding:12px 5vw 20px;background:var(--hd);backdrop-filter:blur(14px);gap:6px;transform:translateY(-12px);opacity:0;visibility:hidden;transition:.4s}
+.links.open{transform:none;opacity:1;visibility:visible}.links a{width:100%;text-align:center}
+.hero{grid-template-columns:1fr;text-align:center;padding-top:100px}.btns{justify-content:center}.vis{order:-1;min-height:300px}}
+.lang{border:1.5px solid var(--acc);background:transparent;color:var(--acc);font:inherit;font-weight:800;padding:8px 16px;border-radius:40px;cursor:pointer;transition:.3s;margin-inline-start:8px}.lang:hover{background:var(--acc);color:#fff}
+html[lang=en] h1,html[lang=en] h2,html[lang=en] .brand{font-family:'Playfair Display','Reem Kufi',serif}
+html[lang=en] .hero h1{letter-spacing:-.01em;line-height:1.15}
+@media(min-width:1200px){.hero{padding-inline:max(6vw,calc((100vw - 1240px)/2))}section{padding-inline:max(6vw,calc((100vw - 1240px)/2))}}
+@media(min-width:801px) and (max-width:1024px){.links a{padding:8px 11px;font-size:.93rem}.hero{gap:16px}.hero h1{font-size:clamp(2.3rem,6vw,3.5rem)}.vis{min-height:300px}}
+@media(max-width:800px){.brand{margin-inline-end:auto}.lang{order:2}#mb{order:3;margin-inline-start:8px}.hero{min-height:auto;padding-bottom:110px}.frame{max-width:560px}}
+@media(max-width:480px){section{padding:64px 5vw}.hero{padding:92px 5vw 100px}.btns{flex-direction:column;align-items:stretch}.btn{text-align:center;padding:14px 20px}.soc{grid-template-columns:repeat(2,1fr);gap:12px}.soc a{padding:20px 8px}.brand{font-size:1.3rem}.brand img{width:48px;height:48px}.hero p{font-size:1.05rem}.lang{padding:7px 12px}}
+.ind{position:absolute;left:0;top:0;border-radius:40px;background:var(--bg2);transition:transform .5s cubic-bezier(.2,.9,.2,1),width .5s cubic-bezier(.2,.9,.2,1),height .3s,top .3s;pointer-events:none;z-index:0}
+.links a{position:relative;z-index:1}
+@media(min-width:801px){.links{position:relative}.links a.on{background:transparent}}
+@media(max-width:800px){.ind{display:none}}
+.vid{position:relative;width:100%;max-width:580px;aspect-ratio:16/10;border-radius:30px;overflow:hidden;background:linear-gradient(135deg,var(--acc),var(--acc2));box-shadow:var(--sh);border:6px solid var(--card)}
+.vid video{width:100%;height:100%;object-fit:cover;display:block}
+.vph{position:absolute;inset:0;display:grid;place-items:center;font-size:3.5rem;opacity:.75;z-index:-0}
+.vid.has .vph{display:none}
+.hero{grid-template-columns:1fr;text-align:center;justify-items:center;background:radial-gradient(circle at 50% 40%,#3a1a10,#120c0a 70%)}
+.hero .bgv{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero .shade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.3) 45%,rgba(0,0,0,.72))}
+.hero .hc{position:relative;z-index:2;max-width:760px}
+.hero h1{color:var(--acc2);font-size:clamp(2.8rem,8vw,5.6rem);text-shadow:0 4px 30px rgba(0,0,0,.45)}.hero h1 span{color:#fff}
+.hero p{color:rgba(255,255,255,.88);margin-inline:auto;max-width:620px}
+.hero .btns{justify-content:center}.hero .btn.o{color:#fff;border-color:#fff}
+.wave{z-index:3}
+.phone{display:none}
+.snd{position:absolute;z-index:5;bottom:96px;inset-inline-end:18px;width:46px;height:46px;border-radius:50%;border:0;background:rgba(0,0,0,.55);color:#fff;font-size:1.2rem;cursor:pointer;backdrop-filter:blur(8px);transition:.3s}.snd:hover{transform:scale(1.1);background:var(--acc)}
+@media(max-width:800px){.hero{min-height:100svh}.hero .bgv{filter:none;transform:none}}
+@media(min-width:801px){
+.hero{grid-template-columns:1.1fr .9fr;text-align:start;justify-items:stretch;gap:48px}
+.hero .hc{justify-self:center}.hero p{margin-inline:0}.hero .btns{justify-content:flex-start}
+.hero h1{font-size:clamp(2.6rem,5.2vw,4.6rem)}
+.hero .bgv{filter:blur(30px) brightness(.6) saturate(1.25);transform:scale(1.3)}
+.phone{display:block;position:relative;z-index:2;justify-self:center;height:min(72vh,660px);aspect-ratio:9/16;border-radius:34px;overflow:hidden;border:6px solid rgba(255,255,255,.92);box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 60px rgba(232,87,42,.35)}
+.phone video{width:100%;height:100%;object-fit:cover;display:block}
+.snd{bottom:40px;inset-inline-end:max(5vw,24px)}}
+@media print{body{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header class="nav" id="nav">
+<a class="brand" href="#top"><img data-l alt=""><span>لامات</span></a>
+<button id="mb" aria-label="القائمة">☰</button>
+<nav class="links" id="links">
+<a href="#top" class="on">الرئيسية</a><a href="#menu">قائمة الطلبات</a><a href="#contact">مواقع التواصل</a><a class="cta" href="https://coffee-lamat.foodics.online/queuebuster?location=28193&order-type=eat-in&table=PARKING%20%2826%29" target="_blank" rel="noopener">اطلب هنا</a>
+</nav>
+<button class="lang" id="lang" aria-label="Language">EN</button>
+</header>
+<main id="top">
+<div class="hero">
+<video class="bgv" id="hv" src="assets/video.mp4" poster="assets/poster.jpg" muted loop playsinline autoplay preload="auto" disablepictureinpicture controlslist="nodownload"></video><div class="shade"></div>
+<div class="hc"><h1>قهوة <span>تلمّ</span> الأحبة</h1><p>قهوة مختصة وحلويات فاخرة في أجواء مريحة، اطلب مشروبك المفضل بسهولة.</p>
+<div class="btns"><a class="btn" href="https://coffee-lamat.foodics.online/queuebuster?location=28193&order-type=eat-in&table=PARKING%20%2826%29" target="_blank" rel="noopener">اطلب هنا</a><a class="btn o" href="#menu">قائمة الطلبات</a></div></div>
+<div class="phone"><video id="hf" src="assets/video.mp4" poster="assets/poster.jpg" muted loop playsinline autoplay preload="auto" disablepictureinpicture controlslist="nodownload"></video></div>
+<svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none"><path fill="var(--bg)" d="M0 40C240 80 480 0 720 30s480 50 720 0V70H0z"/></svg>
+</div>
+<section id="menu"><div class="t rv"><small>MENU</small><h2>قائمة الطلبات</h2></div>
+<div class="frame rv"><div class="in" id="open"><canvas id="c1"></canvas><div class="shield"></div></div></div>
+<p class="hint rv">اضغط على القائمة لعرضها بالحجم الكامل</p></section>
+<section id="contact" class="alt"><div class="t rv"><small>CONTACT</small><h2>مواقع التواصل</h2></div><div class="soc rv">
+<a href="https://api.whatsapp.com/send/?phone=966553055257&text&type=phone_number&app_absent=0" target="_blank" rel="noopener"><i><img src="assets/icon-whatsapp.png" alt=""></i>واتساب</a>
+<a href="https://www.instagram.com/Lamatcoffee" target="_blank" rel="noopener"><i><img src="assets/icon-instagram.png" alt=""></i>انستقرام</a>
+<a href="https://www.tiktok.com/@lamatcoffee?_t=8bCeiYfIMan&_r=1" target="_blank" rel="noopener"><i><img src="assets/icon-tiktok.png" alt=""></i>تيك توك</a>
+<a href="https://www.snapchat.com/add/Lamatcoffee" target="_blank" rel="noopener"><i><img src="assets/icon-snapchat.png" alt=""></i>سناب شات</a>
+<a href="https://maps.app.goo.gl/LsMehXiJPtCcU7b49?g_st=ic" target="_blank" rel="noopener"><i><img src="assets/icon-maps.png" alt=""></i>موقعنا</a></div></section>
+</main>
+<footer>© لامات كوفي · Lamat Coffee</footer>
+<div id="lb"><div class="w"><canvas id="c2"></canvas></div></div>
+<button id="x" aria-label="إغلاق">✕</button>
+<script>
+const LOGO="assets/logo.jpg",IMG="assets/menu.jpg";
+try{history.scrollRestoration='manual'}catch(e){}
+try{if(location.hash)history.replaceState(null,'',location.pathname+location.search)}catch(e){}
+const top0=()=>scrollTo({top:0,left:0,behavior:'instant'});top0();addEventListener('load',()=>{top0();setTimeout(top0,80)});addEventListener('pageshow',top0);
+document.querySelectorAll('[data-l]').forEach(i=>i.src=LOGO);
+function draw(cv,w){const im=new Image();im.onload=()=>{const h=Math.round(im.height*w/im.width);cv.width=w;cv.height=h;const g=cv.getContext('2d');g.drawImage(im,0,0,w,h);g.save();g.globalAlpha=.07;g.fillStyle='#e04e24';g.font='bold '+Math.round(w/16)+'px sans-serif';g.rotate(-.5);for(let y=-w;y<h+w;y+=w/4)for(let x=-w;x<w*1.6;x+=w/2.2)g.fillText('Lamat',x+(y%2?60:0),y);g.restore()};im.src=IMG}
+draw(document.getElementById('c1'),1100);
+const lb=document.getElementById('lb');let ok=0;
+document.getElementById('open').onclick=()=>{if(!ok){draw(document.getElementById('c2'),1100);ok=1}lb.classList.add('on');document.body.style.overflow='hidden'};
+const cl=()=>{lb.classList.remove('on');document.body.style.overflow=''};document.getElementById('x').onclick=cl;
+['contextmenu','dragstart','copy','cut','selectstart'].forEach(e=>document.addEventListener(e,ev=>{if(ev.target.closest&&ev.target.closest('.in,#lb'))ev.preventDefault()}));
+addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&['s','p','u'].includes(e.key.toLowerCase()))e.preventDefault();if(e.key==='Escape')cl()});
+const nav=document.getElementById('nav'),links=document.getElementById('links');
+addEventListener('scroll',()=>nav.classList.toggle('s',scrollY>30),{passive:true});
+document.getElementById('mb').onclick=()=>links.classList.toggle('open');
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+const sec=[...links.querySelectorAll('a:not(.cta)')],tg=['.hero','#menu','#contact'].map(q=>document.querySelector(q));
+const ind=document.createElement('span');ind.className='ind';links.prepend(ind);let cur=0,init=0;
+function upd(){const a=sec[cur];ind.style.width=a.offsetWidth+'px';ind.style.height=a.offsetHeight+'px';ind.style.top=a.offsetTop+'px';ind.style.transform='translateX('+a.offsetLeft+'px)'}
+function pick(){let i=0;tg.forEach((el,k)=>{if(el.getBoundingClientRect().top<=innerHeight*.4)i=k});if(innerHeight+scrollY>=document.documentElement.scrollHeight-6)i=tg.length-1;
+if(i!==cur||!init){cur=i;init=1;sec.forEach((a,k)=>a.classList.toggle('on',k===i));upd()}}
+addEventListener('scroll',()=>requestAnimationFrame(pick),{passive:true});addEventListener('resize',()=>{pick();upd()});
+window.upd=upd;pick();setTimeout(upd,300);if(document.fonts)document.fonts.ready.then(upd);
+
+const L=[['.brand span','Lamat'],['.links a:nth-of-type(1)','Home'],['.links a:nth-of-type(2)','Menu'],['.links a:nth-of-type(3)','Contact'],['.links a:nth-of-type(4)','Order Here'],
+['.hero h1','Coffee that <span>gathers</span> loved ones'],['.hero p','Specialty coffee and premium desserts in a cozy atmosphere. Order your favorite drink with ease.'],
+['.btns a:nth-child(1)','Order Here'],['.btns a:nth-child(2)','Menu'],['#menu h2','Our Menu'],['#menu .hint','Tap the menu to view it full size'],['#contact h2','Social Media'],['footer','© Lamat Coffee']];
+const S=['WhatsApp','Instagram','TikTok','Snapchat','Our Location'],soc=[...document.querySelectorAll('.soc a')];
+const els=L.map(([q,e])=>[document.querySelector(q),e]);
+els.forEach(([el])=>el.dataset.ar=el.innerHTML);soc.forEach(a=>a.dataset.ar=a.lastChild.nodeValue);
+const TT={ar:document.title,en:'Lamat Coffee | Specialty Coffee & Desserts'};
+function setLang(l){const en=l==='en';document.documentElement.lang=l;document.documentElement.dir=en?'ltr':'rtl';
+els.forEach(([el,e])=>el.innerHTML=en?e:el.dataset.ar);soc.forEach((a,i)=>a.lastChild.nodeValue=en?S[i]:a.dataset.ar);
+document.title=TT[l];document.getElementById('lang').textContent=en?'عربي':'EN';document.getElementById('mb').setAttribute('aria-label',en?'Menu':'القائمة');
+try{localStorage.setItem('lamat-lang',l)}catch(e){}setTimeout(upd,60);setTimeout(upd,400)}
+document.getElementById('lang').onclick=()=>setLang(document.documentElement.lang==='ar'?'en':'ar');
+try{const s=localStorage.getItem('lamat-lang');if(s==='en')setLang('en')}catch(e){}
+(function(){const vb=document.getElementById('hv'),vf=document.getElementById('hf'),hero=document.querySelector('.hero');
+let unlocked=false,inHero=true;
+const vis=()=>vf.offsetParent!==null?vf:vb;
+function apply(){vb.muted=true;vf.muted=true;if(inHero&&unlocked)vis().muted=false}
+const ev=['pointerdown','keydown','touchend','click'];
+function unlock(){unlocked=true;ev.forEach(e=>removeEventListener(e,unlock,true));apply();vb.play().catch(()=>{});vf.play().catch(()=>{})}
+function start(){const v=vis();v.muted=false;const p=v.play();
+ if(p&&p.then)p.then(()=>{unlocked=true;apply()}).catch(()=>{v.muted=true;v.play().catch(()=>{});ev.forEach(e=>addEventListener(e,unlock,true))});
+ else ev.forEach(e=>addEventListener(e,unlock,true))}
+vb.muted=true;vf.muted=true;vb.play().catch(()=>{});if(vf.offsetParent!==null)vf.play().catch(()=>{});
+start();
+new IntersectionObserver(e=>e.forEach(x=>{inHero=x.isIntersecting;if(inHero){vb.play().catch(()=>{});vf.play().catch(()=>{})}else{vb.pause();vf.pause()}apply()}),{threshold:.05}).observe(hero);
+addEventListener('resize',apply);
+const nv=document.getElementById('nav'),lk=document.getElementById('links');let ly=scrollY;
+addEventListener('scroll',()=>{const y=scrollY,d=y-ly;if(Math.abs(d)<6)return;
+ if(d>0&&y>120&&!lk.classList.contains('open'))nv.classList.add('hide');else if(d<0||y<80)nv.classList.remove('hide');ly=y},{passive:true});
+})();
+</script>
+</body>
+</html>
