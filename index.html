@@ -137,13 +137,13 @@ html[lang=en] .hero h1{letter-spacing:-.01em;line-height:1.15}
 <a href="https://www.snapchat.com/add/Lamatcoffee" target="_blank" rel="noopener"><i><img src="assets/icon-snapchat.png" alt=""></i>سناب شات</a>
 <a href="https://maps.app.goo.gl/LsMehXiJPtCcU7b49?g_st=ic" target="_blank" rel="noopener"><i><img src="assets/icon-maps.png" alt=""></i>موقعنا</a></div></section>
 </main>
-<footer>© لامات كوفي · Lamat Coffee</footer>
+<footer>© لامات كوفي   </footer>
 <div id="lb"><div class="w"><canvas id="c2"></canvas></div></div>
 <button id="x" aria-label="إغلاق">✕</button>
 <script>
 const LOGO="assets/logo.jpg",IMG="assets/menu.jpg";
 try{history.scrollRestoration='manual'}catch(e){}
-try{if(location.hash)history.replaceState(null,'',location.pathname+location.search)}catch(e){}
+try{if(location.hash).replaceState(null,'',location.pathname+location.search)}catch(e){}
 const top0=()=>scrollTo({top:0,left:0,behavior:'instant'});top0();addEventListener('load',()=>{top0();setTimeout(top0,80)});addEventListener('pageshow',top0);
 document.querySelectorAll('[data-l]').forEach(i=>i.src=LOGO);
 function draw(cv,w){const im=new Image();im.onload=()=>{const h=Math.round(im.height*w/im.width);cv.width=w;cv.height=h;const g=cv.getContext('2d');g.drawImage(im,0,0,w,h);g.save();g.globalAlpha=.07;g.fillStyle='#e04e24';g.font='bold '+Math.round(w/16)+'px sans-serif';g.rotate(-.5);for(let y=-w;y<h+w;y+=w/4)for(let x=-w;x<w*1.6;x+=w/2.2)g.fillText('Lamat',x+(y%2?60:0),y);g.restore()};im.src=IMG}
